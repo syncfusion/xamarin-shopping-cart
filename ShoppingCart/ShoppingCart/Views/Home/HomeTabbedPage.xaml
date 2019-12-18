@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TabbedPage
+    x:Class="ShoppingCart.Views.Home.HomeTabbedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:bookmarksView="clr-namespace:ShoppingCart.Views.Bookmarks"
+    xmlns:catalogViews="clr-namespace:ShoppingCart.Views.Catalog"
+    xmlns:myOrder="clr-namespace:ShoppingCart.Views.History"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+	ios:Page.UseSafeArea="true"
+    Title="Shopping Cart"
+    android:TabbedPage.BarItemColor="{DynamicResource Gray-600}"
+    android:TabbedPage.BarSelectedItemColor="{DynamicResource PrimaryColor}"
+    android:TabbedPage.IsSwipePagingEnabled="False"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    BarBackgroundColor="White">
+
+    <!--  Product home page  -->
+    <catalogViews:ProductHomePage Title="Home">
+        <catalogViews:ProductHomePage.IconImageSource>
+            <FontImageSource
+                FontFamily="{StaticResource FontIcons}"
+                Glyph="{StaticResource HomeIcon}"
+                Size="16" />
+        </catalogViews:ProductHomePage.IconImageSource>
+    </catalogViews:ProductHomePage>
+
+    <!--  Wishlist page  -->
+    <bookmarksView:WishlistPage Title="Wishlist">
+        <bookmarksView:WishlistPage.IconImageSource>
+            <FontImageSource
+                FontFamily="{StaticResource FontIcons}"
+                Glyph="{StaticResource WishlistIcon}"
+                Size="16" />
+        </bookmarksView:WishlistPage.IconImageSource>
+    </bookmarksView:WishlistPage>
+
+    <!--  Cart page  -->
+    <bookmarksView:CartPage Title="Cart">
+        <bookmarksView:CartPage.IconImageSource>
+            <FontImageSource
+                FontFamily="{StaticResource FontIcons}"
+                Glyph="{StaticResource Cart}"
+                Size="16" />
+        </bookmarksView:CartPage.IconImageSource>
+    </bookmarksView:CartPage>
+
+    <!--  My orders page  -->
+    <myOrder:MyOrdersPage Title="My Orders">
+        <myOrder:MyOrdersPage.IconImageSource>
+            <FontImageSource
+                FontFamily="{StaticResource FontIcons}"
+                Glyph="{StaticResource MyOrdersIcon}"
+                Size="16" />
+        </myOrder:MyOrdersPage.IconImageSource>
+    </myOrder:MyOrdersPage>
+
+</TabbedPage>

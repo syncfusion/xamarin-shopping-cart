@@ -1,0 +1,305 @@
+{
+  "bannerimage": "Banner.png",
+
+  "categories": [
+    {
+      "id": "1",
+      "icon": "Electronics.png",
+      "name": "Electronics"
+    },
+    {
+      "id": "2",
+      "icon": "Fashion.png",
+      "name": "Fashion",
+      "subcategories": [
+        {
+          "id": "1",
+          "icon": "Shoe.png",
+          "name": "Shoes",
+          "categoryid": "2"
+        },
+        {
+          "id": "2",
+          "icon": "Sunglass.png",
+          "name": "Glass",
+          "categoryid": "2"
+        },
+        {
+          "id": "3",
+          "icon": "Handbag1.png",
+          "name": "Hand Bag",
+          "categoryid": "2"
+        },
+        {
+          "id": "4",
+          "icon": "Travelbag.png",
+          "name": "Traval Bag",
+          "categoryid": "2"
+        },
+        {
+          "id": "5",
+          "icon": "Wallet.png",
+          "name": "Wallet",
+          "categoryid": "2"
+        },
+        {
+          "id": "6",
+          "icon": "Watch.png",
+          "name": "Watch",
+          "categoryid": "2"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "icon": "HomeFurniture.png",
+      "name": "Home and Furniture"
+    },
+    {
+      "id": "4",
+      "icon": "PersonalCare.png",
+      "name": "Personal Care"
+    },
+    {
+      "id": "5",
+      "icon": "Books.png",
+      "name": "Books"
+    },
+    {
+      "id": "6",
+      "icon": "Clothes.png",
+      "name": "Clothes"
+    },
+    {
+      "id": "7",
+      "icon": "MobilePhones.png",
+      "name": "Mobile Phones"
+    },
+    {
+      "id": "8",
+      "icon": "Accessories.png",
+      "name": "Accessories"
+    },
+    {
+      "id": "9",
+      "icon": "Toys.png",
+      "name": "Toys and Baby"
+    }
+  ],
+
+  "products": [
+    {
+      "id": "1",
+      "previewimages": [
+        { "previewimage": "DivingWatch.png" },
+        { "previewimage": "DivingWatch1.png" },
+        { "previewimage": "DivingWatch2.png" },
+        { "previewimage": "DivingWatch3.png" },
+        { "previewimage": "DivingWatch4.png" }
+      ],
+      "previewimage": "DivingWatch.png",
+      "name": "Diving Watch",
+      "summary":
+        "This sleek diving watch is ISO-certified with a 180-meter depth rating and automatic movement. It comes in three colors.",
+      "description":
+        "This sleek diving watch is ISO-certified with a 180-meter depth rating and automatic movement. It comes in three colors.",
+      "actualprice": "220",
+      "discountpercent": "15",
+      "quantities": ["1", "2", "3"],
+      "totalquantity": 1,
+      "overallrating": "5",
+      "reviews": [
+        {
+          "profileimage": "ProfileImage1.png",
+          "customername": "Jhon Deo",
+          "comment": "Greatest purchase I have ever made in my life.",
+          "rating": "5",
+          "reviewimages": [
+            { "reviewimage": "DivingWatch1.png" },
+            { "reviewimage": "DivingWatch2.png" },
+            { "reviewimage": "DivingWatch3.png" }
+          ],
+          "revieweddate": "2019-12-29"
+        },
+        {
+          "profileimage": "ProfileImage2.png",
+          "customername": "Alice Russell",
+          "comment": "Absolutely love them! Can't stop wearing!",
+          "rating": "5",
+          "reviewimages": [
+            { "reviewimage": "DivingWatch3.png" },
+            { "reviewimage": "DivingWatch4.png" },
+            { "reviewimage": "DivingWatch1.png" }
+          ],
+          "revieweddate": "2019-12-29"
+        }
+      ],
+      "subcategoryid": "6"
+    },
+    {
+      "id": "2",
+      "previewimages": [
+        { "previewimage": "DressWatch.png" },
+        { "previewimage": "DressWatch1.png" },
+        { "previewimage": "DressWatch2.png" },
+        { "previewimage": "DressWatch3.png" },
+        { "previewimage": "DressWatch4.png" }
+      ],
+      "previewimage": "DressWatch.png",
+      "name": "Dress Watch",
+      "summary":
+        "One of the slimmest upscale dress watches on the market, this one boasts the refinement and finishing that make this brand famous.",
+      "description":
+        "One of the slimmest upscale dress watches on the market, this one boasts the refinement and finishing that make this brand famous.",
+      "actualprice": "285",
+      "discountpercent": "30",
+      "quantities": ["1", "2", "3"],
+      "totalquantity": 1,
+      "reviews": [
+        {
+          "profileimage": "ProfileImage1.png",
+          "customername": "Jhon Deo",
+          "comment": "Greatest purchase I have ever made in my life.",
+          "rating": "5",
+          "reviewimages": [
+            { "reviewimage": "DressWatch.png" },
+            { "reviewimage": "DressWatch1.png" },
+            { "reviewimage": "DressWatch2.png" }
+          ],
+          "revieweddate": "2019-12-29"
+        }
+      ],
+      "overallrating": "4",
+      "subcategoryid": "6"
+    },
+    {
+      "id": "3",
+      "previewimages": [
+        { "previewimage": "MilitaryWatch.png" },
+        { "previewimage": "MilitaryWatch1.png" },
+        { "previewimage": "MilitaryWatch2.png" },
+        { "previewimage": "MilitaryWatch3.png" },
+        { "previewimage": "MilitaryWatch4.png" }
+      ],
+      "previewimage": "MilitaryWatch.png",
+      "name": "Military Watch",
+      "summary":
+        "Made for durability, this solar-powered watch has both analog and digital dials, ISO-standard shock resistance, and is water-resistant to 150 meters.",
+      "description":
+        "Made for durability, this solar-powered watch has both analog and digital dials, ISO-standard shock resistance, and is water-resistant to 150 meters.",
+      "actualprice": "220",
+      "discountpercent": "15",
+      "quantities": ["1", "2", "3"],
+      "totalquantity": 1,
+      "reviews": [
+        {
+          "profileimage": "ProfileImage1.png",
+          "customername": "Jhon Deo",
+          "comment": "Greatest purchase I have ever made in my life.",
+          "rating": "5",
+          "reviewimages": [
+            { "reviewimage": "MilitaryWatch.png" },
+            { "reviewimage": "MilitaryWatch1.png" }
+          ],
+          "revieweddate": "2019-12-29"
+        },
+        {
+          "profileimage": "ProfileImage2.png",
+          "customername": "Alice Russell",
+          "comment": "Absolutely love them! Can't stop wearing!",
+          "rating": "5",
+          "reviewimages": [
+            { "reviewimage": "MilitaryWatch2.png" },
+            { "reviewimage": "MilitaryWatch3.png" },
+            { "reviewimage": "MilitaryWatch1.png" }
+          ],
+          "revieweddate": "2019-12-29"
+        },
+        {
+          "profileimage": "ProfileImage1.png",
+          "customername": "Jhon Deo",
+          "comment": "Greatest purchase I have ever made in my life.",
+          "rating": "5",
+          "reviewimages": [
+            { "reviewimage": "MilitaryWatch2.png" }
+          ],
+          "revieweddate": "2019-12-29"
+        }
+      ],
+      "overallrating": "5",
+      "subcategoryid": "6"
+    },
+    {
+      "id": "4",
+      "previewimages": [
+        { "previewimage": "Watch.png" },
+        { "previewimage": "Watch1.png" },
+        { "previewimage": "Watch2.png" },
+        { "previewimage": "Watch3.png" },
+        { "previewimage": "Watch4.png" }
+      ],
+      "previewimage": "Watch.png",
+      "name": "Metallic Watch",
+      "summary":
+        "Whether you choose gold, platinum, or rose-gold, this beauty complements your wardrobe from a casual summer day out to your New Years office party.",
+      "description":
+        "Whether you choose gold, platinum, or rose-gold, this beauty complements your wardrobe from a casual summer day out to your New Years office party.",
+      "actualprice": "285",
+      "discountpercent": "30",
+      "quantities": ["1", "2", "3"],
+      "totalquantity": 1,
+      "reviews": [
+        {
+          "profileimage": "ProfileImage1.png",
+          "customername": "Jhon Deo",
+          "comment": "Greatest purchase I have ever made in my life.",
+          "rating": "5",
+          "reviewimages": [
+            { "reviewimage": "Watch2.png" },
+            { "reviewimage": "Watch3.png" },
+            { "reviewimage": "Watch4.png" }
+          ],
+          "revieweddate": "2019-12-29"
+        }
+      ],
+      "overallrating": "4",
+      "subcategoryid": "6"
+    },
+    {
+      "id": "5",
+      "previewimages": [
+        { "previewimage": "WristWatch.png" },
+        { "previewimage": "WristWatch1.png" },
+        { "previewimage": "WristWatch2.png" },
+        { "previewimage": "WristWatch3.png" },
+        { "previewimage": "WristWatch4.png" }
+      ],
+      "previewimage": "WristWatch.png",
+      "name": "Wrist Watch",
+      "summary":
+        "This trend-setting wristwatch will keep your look up to date for years to come. Choose the color that suites your personality and keep time in style.",
+      "description":
+        "This trend-setting wristwatch will keep your look up to date for years to come. Choose the color that suites your personality and keep time in style.",
+      "actualprice": "220",
+      "discountpercent": "15",
+      "quantities": ["1", "2", "3"],
+      "totalquantity": 1,
+      "reviews": [
+        {
+          "profileimage": "ProfileImage2.png",
+          "customername": "Alice Russell",
+          "comment": "Absolutely love them! Can't stop wearing!",
+          "rating": "5",
+          "reviewimages": [
+            { "reviewimage": "WristWatch1.png" },
+            { "reviewimage": "WristWatch2.png" },
+            { "reviewimage": "WristWatch3.png" }
+          ],
+          "revieweddate": "2019-12-29"
+        }
+      ],
+      "overallrating": "5",
+      "subcategoryid": "6"
+    }
+  ]
+}
