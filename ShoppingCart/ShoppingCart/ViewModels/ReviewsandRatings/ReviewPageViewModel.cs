@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using ShoppingCart.Commands;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace ShoppingCart.ViewModels.ReviewsandRatings
@@ -9,6 +10,12 @@ namespace ShoppingCart.ViewModels.ReviewsandRatings
     [Preserve(AllMembers = true)]
     public class ReviewPageViewModel
     {
+        #region Field
+
+        private DelegateCommand backButtonCommand;
+
+        #endregion
+
         #region Constructor
 
         public ReviewPageViewModel()
@@ -31,6 +38,12 @@ namespace ShoppingCart.ViewModels.ReviewsandRatings
         /// </summary>
         public Command<object> SubmitCommand { get; set; }
 
+        /// <summary>
+        /// Gets or sets the command is executed when the back button is clicked.
+        /// </summary>
+        public DelegateCommand BackButtonCommand =>
+            backButtonCommand ?? (backButtonCommand = new DelegateCommand(BackButtonClicked));
+
         #endregion
 
         #region Methods
@@ -52,6 +65,15 @@ namespace ShoppingCart.ViewModels.ReviewsandRatings
         {
             Application.Current.MainPage.DisplayAlert("Success", "Your review has been successfully added", "", " ");
             Application.Current.MainPage.Navigation.PopAsync();
+        }
+
+        /// <summary>
+        /// Invoked when an back button is clicked.
+        /// </summary>
+        /// <param name="obj">The Object</param>
+        private async void BackButtonClicked(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         #endregion

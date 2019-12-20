@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using ShoppingCart.Commands;
 using ShoppingCart.Models;
 using ShoppingCart.Models.History;
+using ShoppingCart.Views.Detail;
 using ShoppingCart.Views.ReviewsandRatings;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -41,7 +42,7 @@ namespace ShoppingCart.ViewModels.History
 
         private DelegateCommand reviewCommand;
 
-        private bool isEmptyViewVisible;
+        private bool isEmptyViewVisible;        
 
         #endregion
 
@@ -100,7 +101,7 @@ namespace ShoppingCart.ViewModels.History
                 OnPropertyChanged();
             }
         }
-
+        
         #endregion
 
         #region Command
@@ -131,9 +132,10 @@ namespace ShoppingCart.ViewModels.History
         /// Invoked when an item is selected.
         /// </summary>
         /// <param name="attachedObject">The Object</param>
-        private void ItemSelected(object attachedObject)
+        private async void ItemSelected(object attachedObject)
         {
-            // Do something
+            if (attachedObject != null && attachedObject is UserCart cart && cart != null && cart.Product != null)
+                await Application.Current.MainPage.Navigation.PushAsync(new DetailPage(cart.Product));
         }
 
 

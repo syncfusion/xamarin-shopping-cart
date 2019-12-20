@@ -10,7 +10,7 @@
     xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms">
 
     <Color x:Key="Gold">#fcbc0f</Color>
-
+    <Color x:Key="Transparent">Transparent</Color>
     <x:String x:Key="Back">&#xe709;</x:String>
     <x:String x:Key="Filter">&#xe702;</x:String>
     <x:String x:Key="Search">&#xe705;</x:String>
@@ -99,6 +99,19 @@
             </Setter.Value>
         </Setter>
         <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+    </Style>
+
+    <Style x:Key="IconButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-600}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Transparent}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="WidthRequest" Value="40" />
     </Style>
 
     <DataTemplate x:Key="HeaderTemplate">
