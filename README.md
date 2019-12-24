@@ -1,6 +1,6 @@
 # ShoppingCart
  
-The ShoppingCart is a shopping application developed using the Xamarin.Forms platform and Syncfusion controls. It’s been integrated with mock data to test the application without any database or cloud configurations. 
+The Shopping Cart is an online shopping application developed using Syncfusion’s Xamarin UI controls and  Essential UI Kit on the Xamarin.Forms platform. It’s been integrated with mock data to test the application without any database or cloud configurations.
 
 ## Features integrated
 
@@ -27,7 +27,6 @@ This project uses the following patterns and features:
 
 This project uses the following Syncfusion controls:
 
-* Essential UI Kit
 * Button
 * Cards
 * Expander
@@ -42,10 +41,10 @@ This project uses the following Syncfusion controls:
 ## Screens
 
 **Android**
-<img src="images/ProductHomeScreen_Android.png" Width="210" /> <img src="images/ProductDetailScreen_Android.png" Width="210" /> <img src="images/EmptyWishList_Android.png" Width="210" /> <img src="images/ProductCartScreen_Android.png" Width="210" />
+<img src="images/ProductHomeScreen_Android.png" Width="190" /> <img src="images/ProductDetailScreen_Android.png" Width="190" /> <img src="images/EmptyWishList_Android.png" Width="190" /> <img src="images/ProductCartScreen_Android.png" Width="190" />
 
 **iOS**
-<img src="images/ProductHomeScreen_iOS.png" Width="210" /> <img src="images/ProductDetailScreen_iOS.png" Width="210" /> <img src="images/EmptyWishList_iOS.png" Width="210" /> <img src="images/ProductCartScreen_iOS.png" Width="210" />
+<img src="images/ProductHomeScreen_iOS.png" Width="190" /> <img src="images/ProductDetailScreen_iOS.png" Width="190" /> <img src="images/EmptyWishList_iOS.png" Width="190" /> <img src="images/ProductCartScreen_iOS.png" Width="190" />
 
 ## Third-party NuGet packages
  
@@ -67,25 +66,34 @@ This application uses the following third-party assemblies:
 ## How to run the sample
 
 1. Clone the sample and open it in Visual Studio.
-2. Register your license key in App.cs, as shown in the following.
+2. Register your license key in App.cs as shown below.
 
-{% highlight c# %}
+        public App()
+        {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
 
-public App()
-{
-    // Register Syncfusion license                
-	Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");		
-    InitializeComponent();
-    MainPage = new MasterDetail();
-}
+            InitializeComponent();
 
-{% endhighlight %} 
+            MainPage = new MasterDetail();
+        } 
 
 Please refer to this [link](https://help.syncfusion.com/common/essential-studio/licensing/license-key#xamarinforms) for more information about Syncfusion licenses.
 
 3. Set any one of the platform-specific projects (iOS, Android) as a startup project.
 4. Clean and build the application.
 5. Run the application.
+
+## License
+These are samples/templates. The samples/templates may have various licenses but Syncfusion licenses this as [MIT](LICENSE). You may need to obtain additional licenses to use the samples/templates from third parties.
+
+This project uses [Syncfusion controls](https://www.syncfusion.com/xamarin-ui-controls) libraries.
+
+The demo images and illustrations exhibited in this app are obtained from the following website.
+
+* https://www.pexels.com/
+* https://unsplash.com/
+* https://undraw.co/illustrations
  
 ## Disclaimer
  
