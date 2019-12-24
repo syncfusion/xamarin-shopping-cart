@@ -1,6 +1,6 @@
 # ShoppingCart
  
-The Shopping Cart is an online shopping application developed using Syncfusion’s Xamarin UI controls and  Essential UI Kit on the Xamarin.Forms platform. It’s been integrated with mock data to test the application without any database or cloud configurations.
+The Shopping Cart is an online shopping application developed using [Syncfusion’s Xamarin UI controls](https://www.syncfusion.com/xamarin-ui-controls) and  [Essential UI Kit](https://github.com/syncfusion/essential-ui-kit-for-xamarin.forms) on the Xamarin.Forms platform. It’s been integrated with mock data to test the application without any database or cloud configurations.
 
 ## Features integrated
 
@@ -27,16 +27,16 @@ This project uses the following patterns and features:
 
 This project uses the following Syncfusion controls:
 
-* Button
-* Cards
-* Expander
-* Badge View
-* Busy Indicator
-* ComboBox
-* ListView
-* Maps
-* Rating
-* Rotator 
+* [Button](https://www.syncfusion.com/xamarin-ui-controls/xamarin-button)
+* [Cards](https://www.syncfusion.com/xamarin-ui-controls/xamarin-cards)
+* [Expander](https://www.syncfusion.com/xamarin-ui-controls/xamarin-expander)
+* [Badge View](https://www.syncfusion.com/xamarin-ui-controls/xamarin-badge-view)
+* [Busy Indicator](https://www.syncfusion.com/xamarin-ui-controls/xamarin-busy-indicator)
+* [ComboBox](https://www.syncfusion.com/xamarin-ui-controls/xamarin-combobox)
+* [ListView](https://www.syncfusion.com/xamarin-ui-controls/xamarin-listview)
+* [Maps](https://www.syncfusion.com/xamarin-ui-controls/xamarin-maps)
+* [Rating](https://www.syncfusion.com/xamarin-ui-controls/xamarin-rating)
+* [Rotator](https://www.syncfusion.com/xamarin-ui-controls/xamarin-rotator)
 
 ## Screens
 
@@ -46,19 +46,23 @@ This project uses the following Syncfusion controls:
 
 **iOS**
 
-<img src="images/ProductHomeScreen_Android.png" Width="190" /> <img src="images/ProductDetailScreen_Android.png" Width="190" /> <img src="images/EmptyWishList_Android.png" Width="190" /> <img src="images/ProductCartScreen_Android.png" Width="190" />
+<img src="images/ProductHomeScreen_iOS.png" Width="190" /> <img src="images/ProductDetailScreen_iOS.png" Width="190" /> <img src="images/EmptyWishList_iOS.png" Width="190" /> <img src="images/ProductCartScreen_iOS.png" Width="190" />
+
+**UWP**
+
+<img src="images/ProductHomeScreen_UWP.png" Width="600"/>
 
 ## Third-party NuGet packages
  
 This application uses the following third-party assemblies:
 
-* Xamarin.Essentials
-* AutoFac
-* AutoMapper
-* SkiaSharp.Extended
-* SkiaSharp.Svg
-* SkiaSharp.Views.Forms
-* sqlite-net-pcl
+* [Xamarin.Essentials](https://www.nuget.org/packages/Xamarin.Essentials/)
+* [AutoFac](https://www.nuget.org/packages/Autofac/)
+* [AutoMapper](https://www.nuget.org/packages/automapper/)
+* [SkiaSharp.Extended](https://www.nuget.org/packages/SkiaSharp.Extended/)
+* [SkiaSharp.Svg](https://www.nuget.org/packages/SkiaSharp.Svg/)
+* [SkiaSharp.Views.Forms](https://www.nuget.org/packages/SkiaSharp.Views.Forms/)
+* [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 ## Requirements to run the sample
 
