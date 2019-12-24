@@ -223,9 +223,6 @@
   <ItemGroup>
     <Content Include="Assets\Montserrat-SemiBold.ttf" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\SB Icons.ttf" />
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
