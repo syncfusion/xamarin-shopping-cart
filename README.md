@@ -83,21 +83,7 @@ Please refer to this [link](https://help.syncfusion.com/common/essential-studio/
 3. Set any one of the platform-specific projects (iOS, Android) as a startup project.
 4. Clean and build the application.
 5. Run the application.
-
-## License
-These are samples/templates. The samples/templates may have various licenses but Syncfusion licenses this as [MIT](LICENSE). You may need to obtain additional licenses to use the samples/templates from third parties.
-
-This project uses [Syncfusion controls](https://www.syncfusion.com/xamarin-ui-controls) libraries.
-
-The demo images and illustrations exhibited in this app are obtained from the following website.
-
-* https://www.pexels.com/
-* https://unsplash.com/
-* https://undraw.co/illustrations
  
 ## Disclaimer
  
 Syncfusion has no liability for any damage or consequence that may arise by the use or viewing of the examples. The examples are for demonstrative purposes and if you choose to use or access the examples you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, accessing or otherwise viewing the examples. By accessing, viewing, or otherwise seeing the examples you acknowledge and agree Syncfusion’s examples will not allow you to seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize or otherwise do anything with Syncfusion’s examples.
-
-
-
