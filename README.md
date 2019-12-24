@@ -46,7 +46,7 @@ This project uses the following Syncfusion controls:
 
 **iOS**
 
-<img src="images/ProductHomeScreen_iOS.png" Width="190" /> <img src="images/ProductDetailScreen_iOS.png" Width="190" /> <img src="images/EmptyWishList_iOS.png" Width="190" /> <img src="images/ProductCartScreen_iOS.png" Width="190" />
+<img src="images/ProductHomeScreen_Android.png" Width="190" /> <img src="images/ProductDetailScreen_Android.png" Width="190" /> <img src="images/EmptyWishList_Android.png" Width="190" /> <img src="images/ProductCartScreen_Android.png" Width="190" />
 
 ## Third-party NuGet packages
  
