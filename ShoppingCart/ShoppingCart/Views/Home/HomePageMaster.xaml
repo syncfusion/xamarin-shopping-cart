@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="ShoppingCart.Views.Home.HomePageMaster"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+	ios:Page.UseSafeArea="true"
+    Title="Master"
+    mc:Ignorable="d">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <listView:SfListView
+            x:Name="MenuItemsListView"
+            AutoFitMode="DynamicHeight"
+            ItemsSource="{Binding MenuItems}">
+            <listView:SfListView.HeaderTemplate>
+                <DataTemplate>
+                    <!--  profile view  -->
+                    <Grid
+                        BackgroundColor="{DynamicResource Gray-200}"
+                        ColumnSpacing="8"
+                        HeightRequest="54"
+                        RowSpacing="2">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Grid.Column="0"
+                            BackgroundColor="Transparent"
+                            Style="{StaticResource ProfileIconLabelStyle}"
+                            Text="{StaticResource Home}"
+                            TextColor="{DynamicResource Gray-900}" />
+
+                        <Label
+                            Grid.Column="1"
+                            Margin="0,14"
+                            FontFamily="{StaticResource Montserrat-SemiBold}"
+                            FontSize="14"
+                            Style="{StaticResource ProfileLabelStyle}"
+                            Text="Home"
+                            TextColor="{DynamicResource Gray-900}" />
+
+                    </Grid>
+                </DataTemplate>
+            </listView:SfListView.HeaderTemplate>
+            <listView:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid
+                            x:Name="HomeGrid"
+                            BackgroundColor="{DynamicResource Gray-White}"
+                            HeightRequest="50"
+                            RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Grid.Column="0"
+                                BackgroundColor="Transparent"
+                                Style="{StaticResource ProfileIconLabelStyle}"
+                                Text="{Binding TitleIcon}" />
+
+                            <Label
+                                Grid.Column="1"
+                                Margin="0,14"
+                                FontFamily="{StaticResource Montserrat-SemiBold}"
+                                FontSize="14"
+                                Style="{StaticResource ProfileLabelStyle}"
+                                Text="{Binding Title}" />
+
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Style="{StaticResource SeparatorStyle}" />
+
+                            <!--<Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding HomeCommand}" CommandParameter="{x:Reference HomeGrid}" />
+                            </Grid.GestureRecognizers>-->
+
+
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </listView:SfListView.ItemTemplate>
+        </listView:SfListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="ShoppingCart.Views.History.MyOrdersPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behavior="clr-namespace:ShoppingCart.Behaviors"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:controls="clr-namespace:ShoppingCart.Controls"
+    xmlns:converter="clr-namespace:ShoppingCart.Converters"
+    xmlns:emptyView="clr-namespace:ShoppingCart.Views.ErrorAndEmpty"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:viewModel="clr-namespace:ShoppingCart.ViewModels.History"
+    x:Name="myOrdersPage"
+    ios:Page.UseSafeArea="true"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:IntToThicknessConverter x:Key="intToThicknessConverter" />
+            <converter:VisibilityConverter x:Key="visibilityConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <viewModel:MyOrdersPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <emptyView:EmptyView
+                Grid.Row="0"
+                BackgroundColor="White"
+                IsVisible="{Binding IsEmptyViewVisible}">
+                <x:Arguments>
+                    <x:Boolean>true</x:Boolean>
+                    <x:String>ORDER LIST IS EMPTY</x:String>
+                    <x:String>You don't have any items in your order list</x:String>
+                    <x:String>NoItem.svg</x:String>
+                </x:Arguments>
+            </emptyView:EmptyView>
+
+            <StackLayout
+                Grid.Row="0"
+                BackgroundColor="White"
+                IsVisible="{Binding IsEmptyViewVisible, Converter={StaticResource visibilityConverter}}"
+                Spacing="0">
+                <controls:TitleView Title="My Orders" BackgroundColor="{DynamicResource Gray-White}">
+                    <controls:TitleView.LeadingView>
+                        <buttons:SfButton
+                            x:Name="backButton"
+                            Command="{Binding BackButtonCommand}"
+                            CommandParameter="{x:Reference backButton}"
+                            CornerRadius="4"
+                            Style="{StaticResource IconButtonStyle}"
+                            Text="{StaticResource Back}" />
+                    </controls:TitleView.LeadingView>
+                </controls:TitleView>
+                <ContentPresenter />
+
+                <!--  Cart items  -->
+                <listView:SfListView
+                    x:Name="MyOrdersLayout"
+                    BackgroundColor="Transparent"
+                    ItemSize="120"
+                    ItemsSource="{Binding MyOrders}"
+                    SelectionBackgroundColor="Transparent"
+                    VerticalOptions="Start">
+
+                    <listView:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Margin="0,16,0,0"
+                                BackgroundColor="{DynamicResource Gray-White}"
+                                ColumnSpacing="0"
+                                RowSpacing="0">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="{OnIdiom Default=1, Phone=0}" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--  Product image  -->
+                                <Image
+                                    Grid.Row="0"
+                                    Grid.RowSpan="4"
+                                    Grid.Column="0"
+                                    Margin="16,0"
+                                    Aspect="AspectFit"
+                                    BackgroundColor="{DynamicResource Gray-200}"
+                                    HeightRequest="120"
+                                    WidthRequest="120">
+                                    <Image.Source>
+                                        <UriImageSource
+                                            CacheValidity="14"
+                                            CachingEnabled="true"
+                                            Uri="{Binding Product.PreviewImage}" />
+                                    </Image.Source>
+                                </Image>
+
+                                <!--  Product name  -->
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="0,8,0,4"
+                                    FontFamily="{StaticResource Montserrat-SemiBold}"
+                                    FontSize="14"
+                                    HorizontalOptions="StartAndExpand"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="1"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="{Binding Product.Name}"
+                                    TextColor="{DynamicResource Gray-900}" />
+
+                                <StackLayout
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="0,0,0,8"
+                                    Padding="0"
+                                    Orientation="Horizontal"
+                                    Spacing="4">
+
+                                    <!--  Product price  -->
+                                    <Label
+                                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                                        FontSize="20"
+                                        HorizontalOptions="Start"
+                                        Style="{StaticResource LabelStyle}"
+                                        Text="{Binding Product.DiscountPrice, StringFormat='${0:0 }'}"
+                                        TextColor="{DynamicResource PrimaryColor}" />
+
+                                    <Label
+                                        FontFamily="{DynamicResource Montserrat-Medium}"
+                                        FontSize="12"
+                                        HorizontalOptions="Start"
+                                        Style="{StaticResource LabelStyle}"
+                                        Text="{Binding Product.ActualPrice, StringFormat='${0:0.00}'}"
+                                        TextDecorations="Strikethrough"
+                                        VerticalTextAlignment="Center" />
+
+                                    <Label
+                                        FontFamily="{DynamicResource Montserrat-Medium}"
+                                        FontSize="12"
+                                        HorizontalOptions="Start"
+                                        Style="{StaticResource LabelStyle}"
+                                        Text="{Binding Product.DiscountPercent, StringFormat=' ({0}% OFF)'}"
+                                        TextColor="{DynamicResource PrimaryColor}"
+                                        VerticalTextAlignment="Center" />
+
+                                </StackLayout>
+
+                                <StackLayout
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Margin="0"
+                                    Padding="0"
+                                    HorizontalOptions="Start"
+                                    Orientation="Horizontal"
+                                    Spacing="0"
+                                    VerticalOptions="Start">
+
+                                    <!--  Review button  -->
+                                    <Label
+                                        BackgroundColor="Transparent"
+                                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                                        FontSize="14"
+                                        HeightRequest="32"
+                                        HorizontalOptions="Start"
+                                        Text="Write a Review"
+                                        TextColor="{DynamicResource HyperLink}"
+                                        VerticalOptions="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.ReviewCommand, Source={x:Reference MyOrdersLayout}}" CommandParameter="{Binding .}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+
+                                </StackLayout>
+
+                            </Grid>
+                        </DataTemplate>
+                    </listView:SfListView.ItemTemplate>
+
+                    <listView:SfListView.Behaviors>
+                        <behavior:SfListViewTapBehavior Command="{Binding Path=BindingContext.ItemSelectedCommand, Source={x:Reference myOrdersPage}}" />
+                    </listView:SfListView.Behaviors>
+                </listView:SfListView>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="ShoppingCart.Views.AboutUs.AboutUsSimplePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:controls="clr-namespace:ShoppingCart.Controls"
+	xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+	ios:Page.UseSafeArea="true"
+    xmlns:viewModel="clr-namespace:ShoppingCart.ViewModels.AboutUs"
+    Title="About"
+    BackgroundColor="{DynamicResource Gray-White}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--  Binding context for contact us page  -->
+    <ContentPage.BindingContext>
+        <viewModel:AboutUsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0">
+
+                <!--  Title View  -->
+                <controls:TitleView Title="About Us" BackgroundColor="{DynamicResource Gray-White}">
+                    <controls:TitleView.LeadingView>
+                        <buttons:SfButton
+                            x:Name="backButton"
+                            Command="{TemplateBinding BindingContext.BackButtonCommand}"
+                            CommandParameter="{x:Reference backButton}"
+                            CornerRadius="4"
+                            Style="{StaticResource IconButtonStyle}"
+                            Text="{StaticResource Back}" />
+                    </controls:TitleView.LeadingView>
+                </controls:TitleView>
+
+                <ContentPresenter />
+
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout Margin="0, 48, 0, 0"
+                    HorizontalOptions="Center"
+                    Spacing="0"
+                    VerticalOptions="Center">
+
+                    <!--  Product image  -->
+                    <Image HeightRequest="110" WidthRequest="124" Source="{Binding ProductIcon}"/>
+
+                    <!--  Product version  -->
+                    <Label
+                        Margin="0,8.7,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource VersionLabelStyle}"
+                        Text="{Binding ProductVersion, StringFormat='Version {0}'}" />
+
+                    <!--  Product title  -->
+                    <Label
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource HeaderLabelStyle}"
+                        Text="Acme Products">
+                        <Label.Margin>
+                            <OnIdiom
+                                x:TypeArguments="Thickness"
+                                Default="0, 32, 0, 8"
+                                Phone="0, 16, 0, 16" />
+                        </Label.Margin>
+                    </Label>
+
+                    <!--  Product description  -->
+                    <Label
+                        Margin="15,0,15,0"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource DescriptionLabelStyle}"
+                        Text="{Binding ProductDescription}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="ShoppingCart.Views.ReviewsandRatings.ReviewPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:ShoppingCart.Controls"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+    xmlns:viewModel="clr-namespace:ShoppingCart.ViewModels.ReviewsandRatings"
+    ios:Page.UseSafeArea="true"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--  Binding Context for OverAllFeedback Page  -->
+    <ContentPage.BindingContext>
+        <viewModel:ReviewPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Spacing="16">
+
+                <StackLayout Orientation="Horizontal" Padding="16" BackgroundColor="{StaticResource Gray-White}">
+
+                    <buttons:SfButton HorizontalOptions="Start"
+                                x:Name="backButton"
+                                Command="{Binding BackButtonCommand}"
+                                CommandParameter="{x:Reference backButton}"
+                                CornerRadius="4"
+                                Style="{StaticResource IconButtonStyle}"
+                                Text="{StaticResource Back}" />
+
+                    <!--  Title  -->
+                    <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        FontSize="16"
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Write A Review"
+                        TextColor="{DynamicResource Gray-900}" />
+
+                </StackLayout>
+
+                <Grid
+                    Padding="16"
+                    BackgroundColor="{DynamicResource Gray-White}"
+                    ColumnSpacing="0"
+                    RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--  Product image  -->
+                    <Image
+                        x:Name="ProductImage"
+                        Grid.RowSpan="2"
+                        Aspect="AspectFill"
+                        BackgroundColor="{DynamicResource Gray-200}"
+                        HeightRequest="120"
+                        WidthRequest="100" />
+
+                    <!--  Product name label  -->
+                    <Label
+                        x:Name="productTitle"
+                        Grid.Column="1"
+                        Margin="16,0,0,16"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="16"
+                        Style="{StaticResource LabelStyle}"
+                        TextColor="{DynamicResource Gray-900}" />
+
+                    <!--  Rating for the product  -->
+                    <rating:SfRating
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="16,0"
+                        HorizontalOptions="StartAndExpand"
+                        ItemSize="27"
+                        ItemSpacing="5"
+                        RatingSettings="{StaticResource RatingSettings}"
+                        ReadOnly="False"
+                        Style="{StaticResource SfRatingStyle}"
+                        VerticalOptions="Start" />
+
+                </Grid>
+
+                <Grid BackgroundColor="{DynamicResource Gray-White}" RowSpacing="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Margin="16"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Write your Review"
+                        TextColor="{DynamicResource Gray-900}" />
+
+                    <BoxView Grid.Row="1" Style="{StaticResource BoxViewStyle}" />
+
+                    <!--  Editor to write review  -->
+                    <control:BorderlessEditor
+                        Grid.Row="2"
+                        Margin="16,0"
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        FontSize="12"
+                        HeightRequest="100"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Description"
+                        PlaceholderColor="{DynamicResource Gray-700}"
+                        TextColor="{DynamicResource Gray-700}"
+                        VerticalOptions="StartAndExpand" />
+
+                </Grid>
+
+                <!--  Submit button  -->
+                <buttons:SfButton
+                    x:Name="SubmitButton"
+                    Margin="0,8,0,24"
+                    BorderWidth="0"
+                    Command="{Binding SubmitCommand}"
+                    CommandParameter="{x:Reference SubmitButton}"
+                    CornerRadius="20"
+                    FontFamily="{StaticResource Montserrat-SemiBold}"
+                    FontSize="16"
+                    HeightRequest="40"
+                    HorizontalOptions="{OnIdiom Default=EndAndExpand,
+                                                Phone=CenterAndExpand}"
+                    Style="{StaticResource SubmitButtonStyle}"
+                    Text="SUBMIT"
+                    WidthRequest="200" />
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
